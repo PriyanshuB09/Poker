@@ -1,11 +1,94 @@
 <!DOCTYPE html>
 <html>
-<head><title>Socket.IO App</title></head>
+<head>
+  <title>Poker</title>
+  <link
+          rel="stylesheet"
+          href="https://site-assets.fontawesome.com/releases/v6.7.2/css/all.css"
+        >
+  
+        <link
+          rel="stylesheet"
+          href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-duotone-thin.css"
+        >
+  
+        <link
+          rel="stylesheet"
+          href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-duotone-solid.css"
+        >
+  
+        <link
+          rel="stylesheet"
+          href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-duotone-regular.css"
+        >
+  
+        <link
+          rel="stylesheet"
+          href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-duotone-light.css"
+        >
+  
+        <link
+          rel="stylesheet"
+          href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-thin.css"
+        >
+  
+        <link
+          rel="stylesheet"
+          href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-solid.css"
+        >
+  
+        <link
+          rel="stylesheet"
+          href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-regular.css"
+        >
+  
+        <link
+          rel="stylesheet"
+          href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-light.css"
+        >
+  
+        <link
+          rel="stylesheet"
+          href="https://site-assets.fontawesome.com/releases/v6.7.2/css/duotone-thin.css"
+        >
+  
+        <link
+          rel="stylesheet"
+          href="https://site-assets.fontawesome.com/releases/v6.7.2/css/duotone-regular.css"
+        >
+  
+        <link
+          rel="stylesheet"
+          href="https://site-assets.fontawesome.com/releases/v6.7.2/css/duotone-light.css"
+        >
+        <link rel="stylesheet" href="style.css">
+</head>
 <body>
-  <h1>Socket.IO Test</h1>
-  <input id="msgInput" /><button onclick="sendMsg()">Send</button>
-  <ul id="messages"></ul>
-
+  <div class="nav">
+    <div class="list">
+      <div><div>Join Room</div></div>
+      <div><div>Learn Poker</div></div>
+      <div><div>Store</div></div>
+    </div>
+    <div class="total-pfp">
+      <div class="pfp"></div>
+      <div class="auth"><div>Authenticate</div></div>
+    </div>
+  </div>
+      
+  <div class="stats">
+    <div><i class="fa-solid fa-coin-front"></i><span id="coins-data"></span></div>
+    <div><i class="fa-solid fa-trophy-star"></i><span id="ranked-wins-data"></span></div>
+    <div><i class="fa-solid fa-medal"></i><span id="total-wins-data"></span></div>
+    <div><i class="fa-solid fa-ranking-star"></i><span id="rank-data"></span></div>
+    <div><i class="fa-solid fa-chart-line-up"></i><span id="streak-data"></span></div>
+  </div>
+  
+  <div class="tool-tip"></div>
+  
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+  <script src="https://kit.fontawesome.com/ac0c160a73.js" crossorigin="anonymous"></script>
   <script src="/socket.io/socket.io.js"></script>
   <script src="./script.js"></script>
 </body>

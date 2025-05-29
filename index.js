@@ -15,10 +15,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Socket.IO logic
 io.on('connection', socket => {
   console.log('Client connected');
+
+
   socket.on('message', msg => {
     console.log('Received:', msg);
     socket.broadcast.emit('message', msg);
   });
+
+  
 });
 
 // Start server
