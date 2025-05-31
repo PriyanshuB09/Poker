@@ -39,15 +39,20 @@ body {
 
 .pfp {
   transform: skew(0deg);
-  width: calc(2em + 20px);
-  height: calc(2em + 20px);
-  display: block;
+  width: calc(2 * 16px + 20px);
+  height: calc(2 * 16px + 20px);
+  display: flex;
   position: absolute;
   top: 0px;
   right: 0px;
   border-radius: 50%;
   background-color: #3d3d3d;
   outline: none;
+  justify-content: center;
+  align-items: center;
+  color: #e5e5e5;
+  font-size: 36px;
+  overflow: hidden;
 }
 
 .auth {
@@ -148,4 +153,136 @@ body {
   font-size: 12px;
   opacity: 0.8;
   text-align: center;
+}
+
+.room-modal {
+  position: fixed;
+  top: -100vh;
+  left: 50px;
+  width: calc(100vw - 100px);
+  height: calc(100vh - 100px);
+  overflow: auto;
+  border-radius: 15px;
+  padding: 5px;
+  box-sizing: border-box;
+  background-color: #b8b8b8;
+  z-index: 1000;
+  transition-duration: 0.4s;
+}
+
+.blur-div {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(2.5px);
+  z-index: 999;
+  display: none;
+}
+
+.room-modal-close {
+  background-color: #db1313;
+  color: white;
+  width: 1em;
+  height: 1em;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 5px;
+  border-radius: 10px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  transition-duration: 0.4s;
+}
+
+.room-modal-close:hover {
+  background-color: white;
+  color: #db1313
+}
+
+.room-modal-close:active {
+  background-color: black;
+  color: #db1313;
+}
+
+.welcome-or-signup {
+  width: calc(100vw - 20px);
+  min-height: 100px;
+  display: flex;
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: #3d3d3d;
+  color: white;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1.5em;
+  border-radius: 15px;
+  justify-content: center;
+  align-items: center;
+}
+
+.welcome {
+  font-size: 48px;
+  color: white;
+  font-weight: bold;
+  min-width: 50%;
+  height: 95%;
+  text-align: center;
+  display: none;
+}
+
+.signup {
+  display: flex;
+  width: 50%;
+  height: 50px;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#signup {
+  background-color: #939393;
+  height: 100%;
+  width: 25%;
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: center;
+  align-content: center;
+  border-radius: 10px;
+  transition-duration: 0.4s;
+}
+
+#signup:hover {
+  background-color: white;
+  color: black;
+}
+
+#signup:active {
+  background-color: black;
+  color: white;
+}
+
+#login {
+  background-color: #939393;
+  height: 100%;
+  width: 25%;
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: center;
+  align-content: center;
+  border-radius: 10px;
+  transition-duration: 0.4s;
+}
+
+#login:hover {
+  background-color: white;
+  color: black;
+}
+
+#login:active {
+  background-color: black;
+  color: white;
 }
