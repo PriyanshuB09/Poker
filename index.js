@@ -406,6 +406,14 @@ io.on('connection', socket => {
     console.log('received');
     addEmitter().open('users').add(data).commit().then(() => console.log('sent data'));
   });
+
+  socket.on('login-submit-req', data => {
+    console.log('checking');
+    addListener().open('users').find("username", "==", data.username).find("passcode", "==", data.passcode).return().then(fbdata => {
+      let userInfo = fbdata[0];
+      socket.emit('login-submit-res', userInfo);
+    });
+  });
 });
 
 // Start server

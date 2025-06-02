@@ -93,6 +93,10 @@ $(() => {
   });
 });
 
+socket.on('login-submit-res', data => {
+    userData = data;
+})
+
 $(document).mousemove(function(event){
   $(".tool-tip").css("top", `${event.pageY}px`);
   $(".tool-tip").css("left", `${event.pageX}px`);
