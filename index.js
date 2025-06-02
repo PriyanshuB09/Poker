@@ -403,7 +403,9 @@ io.on('connection', socket => {
   });
   
   socket.on('signup-submit-req', data => {
-    addEmitter().open('users').add(data).applyTo('test').commit().then(() => console.log('sent data'));
+    console.log('received');
+    console.log(app);
+    addEmitter().open('users').add(data).commit().then(() => console.log('sent data'));
   });
 });
 
