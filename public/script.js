@@ -85,6 +85,7 @@ $(() => {
   });
 
   $('#login-submit').click(() => {
+    console.log(1);
     let data = {
         username: $('#login-username').val(),
         passcode: $('#login-password').val()
@@ -94,6 +95,7 @@ $(() => {
 });
 
 socket.on('login-submit-res', data => {
+    console.log('4');
     userData = data;
 })
 

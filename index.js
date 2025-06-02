@@ -411,6 +411,7 @@ io.on('connection', socket => {
     console.log('checking');
     addListener().open('users').find("username", "==", data.username).find("passcode", "==", data.passcode).return().then(fbdata => {
       let userInfo = fbdata[0];
+      console.log(3, userInfo);
       socket.emit('login-submit-res', userInfo);
     });
   });
