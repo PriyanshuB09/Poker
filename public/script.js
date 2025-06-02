@@ -77,11 +77,19 @@ $(() => {
 
   $('#signup-submit').click(() => {
     let data = {
-        name: 
-        username:
-        passcode: 
+        name: $('#signup-name').val(),
+        username: $('#signup-username').val(),
+        passcode: $('#signup-password').val()
     }
-    socket.emit('signup-submit-req', );
+    socket.emit('signup-submit-req', data);
+  });
+
+  $('#login-submit').click(() => {
+    let data = {
+        username: $('#login-username').val(),
+        passcode: $('#login-password').val()
+    }
+    socket.emit('login-submit-req', data);
   });
 });
 

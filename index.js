@@ -403,8 +403,10 @@ io.on('connection', socket => {
     console.log('Received:', msg);
     socket.broadcast.emit('message', msg);
   });
-
-  addEmitter().open('users').add({use: false}).applyTo('test').commit().then(() => console.log('sent data'));
+  
+  socket.on('signup-submit-req', data => {
+    addEmitter().open('users').add(data).applyTo('test').commit().then(() => console.log('sent data'));
+  });
 });
 
 // Start server
