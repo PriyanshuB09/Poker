@@ -4,6 +4,8 @@ let userData = {
   
 };
 
+let referrableID;
+
 $(() => {
   
   $('.total-pfp').hover(() => {
@@ -97,7 +99,16 @@ $(() => {
 socket.on('login-submit-res', data => {
     console.log('4');
     userData = data;
-})
+});
+
+socket.on('signup-submit-res', data => {
+    if (data.success) {
+        let { docId, ...realData } = data;
+        userData = realData;
+    } else {
+        alert('Duplicate Account or Other Error');
+    }
+});
 
 $(document).mousemove(function(event){
   $(".tool-tip").css("top", `${event.pageY}px`);

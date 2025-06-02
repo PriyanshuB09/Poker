@@ -404,7 +404,40 @@ io.on('connection', socket => {
   
   socket.on('signup-submit-req', data => {
     console.log('received');
-    addEmitter().open('users').add(data).commit().then(() => console.log('sent data'));
+    // check for duplicate
+    addListener.open('users').find("username", "==", data.username).find("passcode", "==", data.passcode).return().then(fbdata => {
+      if (fbdata.length == 0) {
+        // tells db to make new user
+
+        let standardData = {
+          coins: 0,
+          rankedWins: 0,
+          totalWins: 0,
+          rank: 0,
+          streak: 0
+        }
+
+        addEmitter().open('users').add({...data, ...standardData}).commit().then(() => console.log('sent data'));
+
+        addListener().open('users').find('username', '==', data.username).find("passcode", '==', data.passcode).getAllIDs().then(ids => {
+          if (ids.length == 1) {
+            //respond to client
+            socket.emit('signup-submit-res', {
+              success: true,
+              docId: ids[0],
+              name: data.name,
+              username: data.username,
+              ...standardData
+            });
+          }
+        });
+
+      } else {
+        socket.emit('signup-submit-res', {
+          success: false
+        });
+      }
+    });
   });
 
   socket.on('login-submit-req', data => {
