@@ -404,7 +404,6 @@ io.on('connection', socket => {
   
   socket.on('signup-submit-req', data => {
     console.log('received');
-    console.log(app);
     addEmitter().open('users').add(data).commit().then(() => console.log('sent data'));
   });
 });
