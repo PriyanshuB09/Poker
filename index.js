@@ -7,13 +7,13 @@ import firebase from 'firebase/compat/app';
 import 'firebase/compat/firestore';
 
 const firebaseConfig = {
-  apiKey: process.env.apiKey,
-  authDomain: process.env.authDomain,
-  projectId: process.env.projectId,
-  storageBucket: process.env.storageBucket,
-  messagingSenderId: process.env.messagingSenderId,
-  appId: process.env.messagingSenderId,
-  measurementId: process.env.measurementId
+  apiKey: "AIzaSyCKRXNW2VdZqPmw2gSquifD2jcz6Q70g8E",
+  authDomain: "poker-d42d0.firebaseapp.com",
+  projectId: "poker-d42d0",
+  storageBucket: "poker-d42d0.firebasestorage.app",
+  messagingSenderId: "1046877340876",
+  appId: "1:1046877340876:web:0ad8aedfef13695b626e69",
+  measurementId: "G-W189K4X2V3"
 };
 
 firebase.initializeApp(firebaseConfig);
