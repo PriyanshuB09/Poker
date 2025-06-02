@@ -1,6 +1,11 @@
-let userData = {};
+const socket = io();
+
+let userData = {
+  
+};
 
 $(() => {
+  
   $('.total-pfp').hover(() => {
     $('.auth').css('width', '10em');
     $('.auth').css('padding', '15px');
@@ -60,8 +65,24 @@ $(() => {
   $('#room-btn').click(() => toggleRoomModal());
   $('.room-modal-close').click(() => toggleRoomModal());
   
+  $('#signup').click(() => toggleSignupModal());
+  $('.signup-modal-close').click(() => toggleSignupModal());
+  
+  $('#login').click(() => toggleLoginModal());
+  $('.login-modal-close').click(() => toggleLoginModal());
+  
   $('.auth').click(e => e.preventDefault());
   $('.total-pfp').click(e => e.preventDefault());
+
+
+  $('#signup-submit').click(() => {
+    let data = {
+        name: 
+        username:
+        passcode: 
+    }
+    socket.emit('signup-submit-req', );
+  });
 });
 
 $(document).mousemove(function(event){
@@ -79,8 +100,48 @@ function toggleRoomModal() {
   }
 }
 
-function loadData() {
-  if (userData.name) {
-    
+function toggleSignupModal() {
+  if ($('.signup-modal').css('top') == '50px') {
+    $('.signup-modal').css('top', '-100vh');
+    $('.blur-div').fadeOut();
+  } else {
+    $('.signup-modal').css('top', '50px');
+    $('.blur-div').fadeIn();
   }
 }
+
+function toggleLoginModal() {
+  if ($('.login-modal').css('top') == '50px') {
+    $('.login-modal').css('top', '-100vh');
+    $('.blur-div').fadeOut();
+  } else {
+    $('.login-modal').css('top', '50px');
+    $('.blur-div').fadeIn();
+  }
+}
+
+function loadData() {
+  if (userData.name) {
+    $('.welcome').show();
+    $('.signup').hide();
+    $('.welcome').text(`Hi, ${userData.name}`);
+  } else {
+    $('.signup').show();
+    $('.welcome').hide();
+  }
+}
+
+loadData();
+
+const inputs = document.querySelectorAll('input');
+
+inputs.forEach(el => {
+  el.addEventListener('blur', e => {
+    if(e.target.value) {
+      e.target.classList.add('dirty');
+    } else {
+      e.target.classList.remove('dirty');
+    }
+  })
+});
+

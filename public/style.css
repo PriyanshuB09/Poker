@@ -170,6 +170,36 @@ body {
   transition-duration: 0.4s;
 }
 
+.signup-modal {
+  position: fixed;
+  top: -100vh;
+  left: 50px;
+  width: calc(100vw - 100px);
+  height: calc(100vh - 100px);
+  overflow: auto;
+  border-radius: 15px;
+  padding: 5px;
+  box-sizing: border-box;
+  background-color: #b8b8b8;
+  z-index: 1000;
+  transition-duration: 0.4s;
+}
+
+.login-modal {
+  position: fixed;
+  top: -100vh;
+  left: 50px;
+  width: calc(100vw - 100px);
+  height: calc(100vh - 100px);
+  overflow: auto;
+  border-radius: 15px;
+  padding: 5px;
+  box-sizing: border-box;
+  background-color: #b8b8b8;
+  z-index: 1000;
+  transition-duration: 0.4s;
+}
+
 .blur-div {
   position: fixed;
   top: 0;
@@ -209,6 +239,58 @@ body {
   color: #db1313;
 }
 
+.signup-modal-close {
+  background-color: #db1313;
+  color: white;
+  width: 1em;
+  height: 1em;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 5px;
+  border-radius: 10px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  transition-duration: 0.4s;
+}
+
+.signup-modal-close:hover {
+  background-color: white;
+  color: #db1313
+}
+
+.signup-modal-close:active {
+  background-color: black;
+  color: #db1313;
+}
+
+.login-modal-close {
+  background-color: #db1313;
+  color: white;
+  width: 1em;
+  height: 1em;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 5px;
+  border-radius: 10px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  transition-duration: 0.4s;
+}
+
+.login-modal-close:hover {
+  background-color: white;
+  color: #db1313
+}
+
+.login-modal-close:active {
+  background-color: black;
+  color: #db1313;
+}
+
 .welcome-or-signup {
   width: calc(100vw - 20px);
   min-height: 100px;
@@ -239,7 +321,7 @@ body {
   display: flex;
   width: 50%;
   height: 50px;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -285,4 +367,122 @@ body {
 #login:active {
   background-color: black;
   color: white;
+}
+
+.modal-container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%;
+  height: 50vh;
+  padding: 5px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  background-color: #c4c4c4;
+}
+
+.modal-container > *, .modal-container > *::before, .modal-container > *::after {
+  box-sizing: border-box;
+  margin: 0.5em;
+}
+
+.custom-field {
+  position: relative;
+  font-size: 14px;
+  border-top: 20px solid transparent;
+  margin-bottom: 5px;
+  display: inline-block;
+  --field-padding: 12px;
+}
+
+.custom-field input {
+  border: none;
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: #efefef;
+  padding: var(--field-padding);
+  border-radius: 3px;
+  width: 250px;
+  outline: none;
+  font-size: 14px;
+}
+
+.custom-field .placeholder {
+  position: absolute;
+  left: var(--field-padding);
+  width: calc(100% - (var(--field-padding) * 2));
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  top: 22px;
+  line-height: 100%;
+  transform: translateY(-50%);
+  color: #8f8f8f;
+  transition: 
+    top 0.3s ease,
+    color 0.3s ease,
+    font-size 0.3s ease;
+}
+
+.custom-field input.dirty + .placeholder,
+.custom-field input:focus + .placeholder,
+.custom-field input:not(:placeholder-shown) + .placeholder {
+  top: -10px;
+  font-size: 10px;
+  color: #222;
+}
+
+.custom-field .error-message {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+  font-size: 12px;
+  background: #d30909;
+  color: #fff;
+  height: 24px;
+}
+
+.custom-field .error-message:empty {
+  opacity: 0;
+}
+
+/* ONE */
+.custom-field.one input {
+  background: none;
+  border: 2px solid #ddd;
+  transition: border-color 0.3s ease;
+}
+
+.custom-field.one input + .placeholder {
+  left: 8px;
+  padding: 0 5px;
+}
+
+.custom-field.one input.dirty,
+.custom-field.one input:not(:placeholder-shown),
+.custom-field.one input:focus {
+  border-color: #222;
+  transition-delay: 0.1s
+}
+
+.custom-field.one input.dirty + .placeholder,
+.custom-field.one input:not(:placeholder-shown) + .placeholder,
+.custom-field.one input:focus + .placeholder {
+  top: 0;
+  font-size: 10px;
+  color: #222;
+  background: #b8b8b8;
+  width: auto
+}
+
+.submit-btn {
+  padding: 5px;
+  border-radius: 5px;
+  color: #e8e8e8;
+  background-color: #565656;
 }
