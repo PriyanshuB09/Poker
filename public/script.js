@@ -157,11 +157,12 @@ function loadData() {
     $('.welcome').hide();
   }
 
-  $('#coins-data').text(`${userData.coins}`);
-  $('#ranked-wins-data').text(`${userData.rankedWins}`);
-  $('#total-wins-data').text(`${userData.totalWins}`);
-  $('#rank-data').text(`${userData.rank}`);
-  $('#streak-data').text(`${userData.streak}`);
+
+  $('#coins-data').text(`${(userData.coins) ? userData.coins : ''}`);
+  $('#ranked-wins-data').text(`${(userData.rankedWins) ? userData.rankedWins : ''}`);
+  $('#total-wins-data').text(`${(userData.totalWins) ? userData.totalWins : ''}`);
+  $('#rank-data').text(`${(userData.rank) ? userData.rank : ''}`);
+  $('#streak-data').text(`${(userData.streak) ? userData.streak : ''}`);
 }
 
 loadData();
