@@ -406,7 +406,7 @@ io.on('connection', socket => {
   socket.on('signup-submit-req', data => {
     console.log('received');
     // check for duplicate
-    addListener().open('users').find("username", "==", data.username).find("passcode", "==", data.passcode).return().then(fbdata => {
+    addListener().open('users').find("username", "==", data.username).return().then(fbdata => {
       if (fbdata.length == 0) {
         console.log('found no duplicates');
         // tells db to make new user

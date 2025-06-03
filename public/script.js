@@ -99,12 +99,14 @@ $(() => {
 socket.on('login-submit-res', data => {
     console.log('4');
     userData = data;
+    loadData();
 });
 
 socket.on('signup-submit-res', data => {
     if (data.success) {
         let { success, docId, ...realData } = data;
         userData = realData;
+        loadData();
     } else {
         alert('Duplicate Account or Other Error');
     }
