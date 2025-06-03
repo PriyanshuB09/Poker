@@ -299,6 +299,7 @@ class CachedListener {
       let querySnapshot = await object.get();
 
       querySnapshot.forEach(doc => {
+          console.log(doc.id);
           this.givenID.push(doc.id);
       });
 
@@ -407,6 +408,7 @@ io.on('connection', socket => {
     // check for duplicate
     addListener().open('users').find("username", "==", data.username).find("passcode", "==", data.passcode).return().then(fbdata => {
       if (fbdata.length == 0) {
+        console.log('found no duplicates');
         // tells db to make new user
 
         let standardData = {
@@ -417,9 +419,11 @@ io.on('connection', socket => {
           streak: 0
         }
 
+        console.log('committed data to firestore')
         addEmitter().open('users').add({...data, ...standardData}).commit().then(() => console.log('sent data'));
 
         addListener().open('users').find('username', '==', data.username).find("passcode", '==', data.passcode).getAllIDs().then(ids => {
+          console.log(ids);
           if (ids.length == 1) {
             //respond to client
             socket.emit('signup-submit-res', {

@@ -103,7 +103,7 @@ socket.on('login-submit-res', data => {
 
 socket.on('signup-submit-res', data => {
     if (data.success) {
-        let { docId, ...realData } = data;
+        let { success, docId, ...realData } = data;
         userData = realData;
     } else {
         alert('Duplicate Account or Other Error');
