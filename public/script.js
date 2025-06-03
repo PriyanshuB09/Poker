@@ -156,6 +156,12 @@ function loadData() {
     $('.signup').show();
     $('.welcome').hide();
   }
+
+  $('#coins-data').text(`${userData.coins}`);
+  $('#ranked-wins-data').text(`${userData.rankedWins}`);
+  $('#total-wins-data').text(`${userData.totalWins}`);
+  $('#rank-data').text(`${userData.rank}`);
+  $('#streak-data').text(`${userData.streak}`);
 }
 
 loadData();
