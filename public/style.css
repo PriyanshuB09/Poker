@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
 
 body {
   background-color: #636363;
@@ -89,7 +89,7 @@ body {
 .auth > div {
   transform: skew(-20deg);
   outline: none;
-  
+
   transition-property: transform;
   transition-duration: 0.1s;
   transition-timing-function: ease;
@@ -137,7 +137,6 @@ body {
   border-radius: 10px;
   align-content: center;
   text-align: center;
-  
 }
 
 .tool-tip {
@@ -156,6 +155,36 @@ body {
 }
 
 .room-modal {
+  position: fixed;
+  top: -100vh;
+  left: 50px;
+  width: calc(100vw - 100px);
+  height: calc(100vh - 100px);
+  overflow: auto;
+  border-radius: 15px;
+  padding: 5px;
+  box-sizing: border-box;
+  background-color: #b8b8b8;
+  z-index: 1000;
+  transition-duration: 0.4s;
+}
+
+.learn-modal {
+  position: fixed;
+  top: -100vh;
+  left: 50px;
+  width: calc(100vw - 100px);
+  height: calc(100vh - 100px);
+  overflow: auto;
+  border-radius: 15px;
+  padding: 5px;
+  box-sizing: border-box;
+  background-color: #b8b8b8;
+  z-index: 1000;
+  transition-duration: 0.4s;
+}
+
+.store-modal {
   position: fixed;
   top: -100vh;
   left: 50px;
@@ -231,10 +260,62 @@ body {
 
 .room-modal-close:hover {
   background-color: white;
-  color: #db1313
+  color: #db1313;
 }
 
 .room-modal-close:active {
+  background-color: black;
+  color: #db1313;
+}
+
+.learn-modal-close {
+  background-color: #db1313;
+  color: white;
+  width: 1em;
+  height: 1em;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 5px;
+  border-radius: 10px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  transition-duration: 0.4s;
+}
+
+.learn-modal-close:hover {
+  background-color: white;
+  color: #db1313;
+}
+
+.learn-modal-close:active {
+  background-color: black;
+  color: #db1313;
+}
+
+.store-modal-close {
+  background-color: #db1313;
+  color: white;
+  width: 1em;
+  height: 1em;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 5px;
+  border-radius: 10px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  transition-duration: 0.4s;
+}
+
+.store-modal-close:hover {
+  background-color: white;
+  color: #db1313;
+}
+
+.store-modal-close:active {
   background-color: black;
   color: #db1313;
 }
@@ -257,7 +338,7 @@ body {
 
 .signup-modal-close:hover {
   background-color: white;
-  color: #db1313
+  color: #db1313;
 }
 
 .signup-modal-close:active {
@@ -283,7 +364,7 @@ body {
 
 .login-modal-close:hover {
   background-color: white;
-  color: #db1313
+  color: #db1313;
 }
 
 .login-modal-close:active {
@@ -383,7 +464,9 @@ body {
   background-color: #c4c4c4;
 }
 
-.modal-container > *, .modal-container > *::before, .modal-container > *::after {
+.modal-container > *,
+.modal-container > *::before,
+.modal-container > *::after {
   box-sizing: border-box;
   margin: 0.5em;
 }
@@ -422,10 +505,7 @@ body {
   line-height: 100%;
   transform: translateY(-50%);
   color: #8f8f8f;
-  transition: 
-    top 0.3s ease,
-    color 0.3s ease,
-    font-size 0.3s ease;
+  transition: top 0.3s ease, color 0.3s ease, font-size 0.3s ease;
 }
 
 .custom-field input.dirty + .placeholder,
@@ -467,7 +547,7 @@ body {
 .custom-field.one input:not(:placeholder-shown),
 .custom-field.one input:focus {
   border-color: #222;
-  transition-delay: 0.1s
+  transition-delay: 0.1s;
 }
 
 .custom-field.one input.dirty + .placeholder,
@@ -477,7 +557,7 @@ body {
   font-size: 10px;
   color: #222;
   background: #b8b8b8;
-  width: auto
+  width: auto;
 }
 
 .submit-btn {
