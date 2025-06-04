@@ -1,81 +1,55 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Poker</title>
-  <link
-          rel="stylesheet"
-          href="https://site-assets.fontawesome.com/releases/v6.7.2/css/all.css"
-        >
-  
-        <link
-          rel="stylesheet"
-          href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-duotone-thin.css"
-        >
-  
-        <link
-          rel="stylesheet"
-          href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-duotone-solid.css"
-        >
-  
-        <link
-          rel="stylesheet"
-          href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-duotone-regular.css"
-        >
-  
-        <link
-          rel="stylesheet"
-          href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-duotone-light.css"
-        >
-  
-        <link
-          rel="stylesheet"
-          href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-thin.css"
-        >
-  
-        <link
-          rel="stylesheet"
-          href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-solid.css"
-        >
-  
-        <link
-          rel="stylesheet"
-          href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-regular.css"
-        >
-  
-        <link
-          rel="stylesheet"
-          href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-light.css"
-        >
-  
-        <link
-          rel="stylesheet"
-          href="https://site-assets.fontawesome.com/releases/v6.7.2/css/duotone-thin.css"
-        >
-  
-        <link
-          rel="stylesheet"
-          href="https://site-assets.fontawesome.com/releases/v6.7.2/css/duotone-regular.css"
-        >
-  
-        <link
-          rel="stylesheet"
-          href="https://site-assets.fontawesome.com/releases/v6.7.2/css/duotone-light.css"
-        >
-        <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/all.css">
+
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-duotone-thin.css">
+
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-duotone-solid.css">
+
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-duotone-regular.css">
+
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-duotone-light.css">
+
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-thin.css">
+
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-solid.css">
+
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-regular.css">
+
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-light.css">
+
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/duotone-thin.css">
+
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/duotone-regular.css">
+
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/duotone-light.css">
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <div class="nav">
     <div class="list">
-      <div id="room-btn"><div>Join Room</div></div>
-      <div><div>Learn Poker</div></div>
-      <div><div>Store</div></div>
+      <div id="room-btn">
+        <div>Join Room</div>
+      </div>
+      <div id="learn-btn">
+        <div>Learn Poker</div>
+      </div>
+      <div id="store-btn">
+        <div>Store</div>
+      </div>
     </div>
     <div class="total-pfp">
       <div class="pfp"><i class="fa-solid fa-user"></i></div>
-      <div class="auth"><div>Authenticate</div></div>
+      <div class="auth">
+        <div>Authenticate</div>
+      </div>
     </div>
   </div>
-      
+
   <div class="stats">
     <div><i class="fa-solid fa-coins"></i><span id="coins-data"></span></div>
     <div><i class="fa-solid fa-trophy"></i><span id="ranked-wins-data"></span></div>
@@ -83,7 +57,7 @@
     <div><i class="fa-solid fa-ranking-star"></i><span id="rank-data"></span></div>
     <div><i class="fa-solid fa-chart-line"></i><span id="streak-data"></span></div>
   </div>
-  
+
   <div class="welcome-or-signup">
     <div class="welcome"></div>
     <div class="signup">
@@ -91,115 +65,87 @@
       <div id="login">Log In</div>
     </div>
   </div>
-  
+
   <div class="tool-tip"></div>
-  
+
   <div class="room-modal">
     <div class="room-modal-close"><i class="fa-solid fa-xmark"></i></div>
   </div>
-  
+
+  <div class="learn-modal">
+    <div class="learn-modal-close"><i class="fa-solid fa-xmark"></i></div>
+  </div>
+
+  <div class="store-modal">
+    <div class="store-modal-close"><i class="fa-solid fa-xmark"></i></div>
+  </div>
+
   <div class="login-modal">
     <div class="login-modal-close"><i class="fa-solid fa-xmark"></i></div>
     <div class="modal-container">
       <div>Log in to an existing account:</div>
       <label class="custom-field one">
-        <input type="text" placeholder=" " id="login-username"/>
+        <input type="text" placeholder=" " id="login-username" />
         <span class="placeholder">Enter Username</span>
       </label>
       <label class="custom-field one">
-        <input type="password" placeholder=" " id="login-password"/>
+        <input type="password" placeholder=" " id="login-password" />
         <span class="placeholder">Enter Password</span>
       </label>
       <div class="submit-btn" id="login-submit">Submit</div>
     </div>
   </div>
-  
+
   <div class="signup-modal">
     <div class="signup-modal-close"><i class="fa-solid fa-xmark"></i></div>
     <div class="modal-container">
       <div>Register for a new account:</div>
       <label class="custom-field one">
-        <input type="text" placeholder=" " id="signup-name"/>
+        <input type="text" placeholder=" " id="signup-name" />
         <span class="placeholder">Enter Preferred Name</span>
       </label>
       <label class="custom-field one">
-        <input type="text" placeholder=" " id="signup-username"/>
+        <input type="text" placeholder=" " id="signup-username" />
         <span class="placeholder">Enter Username</span>
       </label>
       <label class="custom-field one">
-        <input type="password" placeholder=" " id="signup-password"/>
+        <input type="password" placeholder=" " id="signup-password" />
         <span class="placeholder">Enter Password</span>
       </label>
       <div class="submit-btn" id="signup-submit">Submit</div>
     </div>
   </div>
-  
+
   <div class="blur-div"></div>
-  
-  
+
   <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
   <script src="https://kit.fontawesome.com/ac0c160a73.js" crossorigin="anonymous"></script>
   <script src="/socket.io/socket.io.js"></script>
   <script src="./script.js"></script>
 
-  <link
-        rel="stylesheet"
-        href="https://site-assets.fontawesome.com/releases/v6.7.2/css/all.css"
-      >
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/all.css">
 
-      <link
-        rel="stylesheet"
-        href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-duotone-thin.css"
-      >
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-duotone-thin.css">
 
-      <link
-        rel="stylesheet"
-        href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-duotone-solid.css"
-      >
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-duotone-solid.css">
 
-      <link
-        rel="stylesheet"
-        href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-duotone-regular.css"
-      >
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-duotone-regular.css">
 
-      <link
-        rel="stylesheet"
-        href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-duotone-light.css"
-      >
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-duotone-light.css">
 
-      <link
-        rel="stylesheet"
-        href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-thin.css"
-      >
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-thin.css">
 
-      <link
-        rel="stylesheet"
-        href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-solid.css"
-      >
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-solid.css">
 
-      <link
-        rel="stylesheet"
-        href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-regular.css"
-      >
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-regular.css">
 
-      <link
-        rel="stylesheet"
-        href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-light.css"
-      >
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-light.css">
 
-      <link
-        rel="stylesheet"
-        href="https://site-assets.fontawesome.com/releases/v6.7.2/css/duotone-thin.css"
-      >
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/duotone-thin.css">
 
-      <link
-        rel="stylesheet"
-        href="https://site-assets.fontawesome.com/releases/v6.7.2/css/duotone-regular.css"
-      >
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/duotone-regular.css">
 
-      <link
-        rel="stylesheet"
-        href="https://site-assets.fontawesome.com/releases/v6.7.2/css/duotone-light.css"
-      >
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/duotone-light.css">
 </body>
+
 </html>
